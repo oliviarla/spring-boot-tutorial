@@ -20,9 +20,9 @@ public class HelloController {
         return "hello-template";
     }
     @GetMapping("hello-string")
-    @ResponseBody //데이터를 그대로 내보냄
+    @ResponseBody
     public String helloString(@RequestParam("name") String name){
-        return "hello "+name;
+        return "hello "+name; //string 반환 -> 데이터를 그대로 내보냄
     }
 
     @GetMapping("hello-api")
