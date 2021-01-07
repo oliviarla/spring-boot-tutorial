@@ -3,13 +3,21 @@ package oliviarla.spring_intro.service;
 import oliviarla.spring_intro.domain.Member;
 import oliviarla.spring_intro.repository.MemberRepository;
 import oliviarla.spring_intro.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+//@Service //spring 컨테이너에 서비스 등록
 public class MemberService {
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
+
+    @Autowired //의존하고 있는 MemberRepository를 스프링 컨테이너에서 가져옴
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     /*
     *회원 가입

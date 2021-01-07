@@ -1,9 +1,11 @@
 package oliviarla.spring_intro.repository;
 
 import oliviarla.spring_intro.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
+//@Repository
 public class MemoryMemberRepository implements MemberRepository{
 
     private static Map<Long, Member> store = new HashMap<>(); //save할 때 저장되는 곳
