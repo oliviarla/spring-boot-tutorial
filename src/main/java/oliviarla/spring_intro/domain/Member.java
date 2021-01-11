@@ -1,12 +1,17 @@
 package oliviarla.spring_intro.domain;
 
+import javax.persistence.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-public class Member {
+@Entity
+public class  Member {
 
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) //identity: db가 알아서 생성
     private Long id; //시스템이 저장하는 임의의 값
+
+    @Column
     private String name; //이름
 
 
