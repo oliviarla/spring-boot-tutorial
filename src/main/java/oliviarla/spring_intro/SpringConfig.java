@@ -1,5 +1,6 @@
 package oliviarla.spring_intro;
 
+import oliviarla.spring_intro.aop.TimeTraceAop;
 import oliviarla.spring_intro.domain.Member;
 import oliviarla.spring_intro.repository.*;
 import oliviarla.spring_intro.service.MemberService;
@@ -53,5 +54,10 @@ public class SpringConfig {
 //        //return new MemoryMemberRepository();
 //    }
 
+    //AOP를 스프링빈에 직접 등록하는 법
+//    @Bean
+//    public TimeTraceAop timeTraceAop(){
+//        return new TimeTraceAop();
+//    }
 
 }
